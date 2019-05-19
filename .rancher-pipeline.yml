@@ -6,6 +6,6 @@ stages:
       buildContext: .
       tag: tux/fact_extractor
       pushRemote: true
-      registry: 127.0.0.1:34579
+      registry: 10.43.182.243:5000
 timeout: 60
 notification: {}
