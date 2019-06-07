@@ -4,8 +4,15 @@ stages:
   - publishImageConfig:
       dockerfilePath: ./Dockerfile
       buildContext: .
-      tag: tux/fact_extractor
+      tag: saltmine/fact_extractor
       pushRemote: true
-      registry: 10.43.182.243:5000
+      registry: http://registry.k8s.saltmine.dev:5000
 timeout: 60
-notification: {}
+notification:
+  recipients:
+  - recipient: '#homelab'
+    notifier: c-lp2n8:n-bdfx9
+  condition:
+  - Success
+  - Changed
+  - Failed
